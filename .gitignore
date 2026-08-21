@@ -211,3 +211,6 @@ content-in/*
 content-out/*
 !content-in/.gitkeep
 !content-out/.gitkeep
+
+# macOS
+.DS_Store
