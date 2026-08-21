@@ -1,5 +1,7 @@
 # Avoiding LLM Drift When Using AI Coding Assistants
 
+![avoid-llm-drift: files and flow](assets/workflow.png)
+
 The way we code with AI assistants has evolved with the rise of agentic coding. Direct instructions beat meta (abstract) ones and using multiple lean instructions helps avoid LLM drift (this means when AI stops listening to you).
 
 For example:
