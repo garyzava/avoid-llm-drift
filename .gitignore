@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Content folders: keep the folders, ignore the contents
+content-in/*
+content-out/*
+!content-in/.gitkeep
+!content-out/.gitkeep
+
+# macOS
+.DS_Store
