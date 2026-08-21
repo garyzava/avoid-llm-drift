@@ -1,7 +1,7 @@
 
 # Task: Generate a hierarchical AGENTS.md structure
 
-Act as a System Architect. Read the PRD.md. If this is a new project, design and create the AGENTS.md as a 'Constitution' for future agents."
+Act as a System Architect. Read the PRD.md. If this is a new project, design and create the AGENTS.md as a 'Constitution' for future agents.
 
 Otherwise if this is an existing repo analyze this codebase and generate a hierarchical AGENTS.md structure
 
@@ -61,8 +61,8 @@ Create a **lightweight root AGENTS.md** (~100-200 lines max) that includes:
 **3. Universal Conventions** (5-10 lines)
 - Code style (TypeScript strict? Prettier? ESLint?)
 - Commit format (Conventional Commits?)
-- Branch strategy
-- PR requirements
+- Branch strategy (state this rule: create one branch for each task)
+- PR requirements (state this rule: create one PR for each task)
 
 **4. Security & Secrets** (3-5 lines)
 - Never commit tokens
@@ -88,6 +88,9 @@ Structure like:
 
 **6. Definition of Done** (3-5 lines)
 - What must pass before a PR is ready
+- Each task ends with exactly one PR (a task = one checkbox line in TASKS.md)
+- Do not split a task across many PRs; if a task is too big for one PR, split it into smaller tasks in TASKS.md first
+- Tick the task in TASKS.md after the PR
 - Minimal checklist
 
 ---
@@ -203,6 +206,18 @@ If there's a database service:
 
 ---
 
+### Phase 5: Generate TASKS.md
+
+Create one `TASKS.md` file at the repo root:
+
+- Divide the work into milestones. Use one section per milestone.
+- List each task as a checkbox: `- [ ] Task name`. One checkbox line is one task.
+- Keep each task small. One task maps to one branch and one PR, never more.
+- If a task is too big for one PR, split it into smaller tasks in TASKS.md before you start it.
+- Write the update rule in the file: tick the task after its PR. Add new tasks when the plan changes.
+
+---
+
 ## Output Format
 
 Provide the files in this order:
@@ -210,6 +225,7 @@ Provide the files in this order:
 1. **Analysis Summary** (from Phase 1)
 2. **Root AGENTS.md** (complete, ready to copy)
 3. **Each Sub-Folder AGENTS.md** (one at a time, with file path)
+4. **TASKS.md** (complete, ready to copy)
 
 For each file, use this format:
 
@@ -245,3 +261,5 @@ Before generating, verify:
 - [ ] Every "✅ DO" has a real file example
 - [ ] Every "❌ DON'T" references a real anti-pattern or legacy file
 - [ ] Pre-PR checks are single copy-paste commands
+- [ ] Conventions state one branch and one PR per task
+- [ ] TASKS.md has milestones and checkbox tasks
